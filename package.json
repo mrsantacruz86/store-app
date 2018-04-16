@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrsantacruz86/greatbay.git"
+    "url": "git+https://github.com/mrsantacruz86/store-app.git"
   },
   "keywords": [
     "auction",
@@ -18,9 +18,9 @@
   "author": "Nelson Diaz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mrsantacruz86/greatbay/issues"
+    "url": "https://github.com/mrsantacruz86/store-app/issues"
   },
-  "homepage": "https://github.com/mrsantacruz86/greatbay#readme",
+  "homepage": "https://github.com/mrsantacruz86/store-app#readme",
   "dependencies": {
     "dotenv": "^5.0.1",
     "inquirer": "^5.2.0",
