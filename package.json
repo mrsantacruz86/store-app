@@ -1,0 +1,29 @@
+{
+  "name": "storeappcli",
+  "version": "1.0.0",
+  "description": "App to manage auctions and have persistency",
+  "main": "greatbay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrsantacruz86/greatbay.git"
+  },
+  "keywords": [
+    "auction",
+    "inquirer",
+    "mysql"
+  ],
+  "author": "Nelson Diaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrsantacruz86/greatbay/issues"
+  },
+  "homepage": "https://github.com/mrsantacruz86/greatbay#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "inquirer": "^5.2.0",
+    "mysql": "^2.15.0"
+  }
+}
