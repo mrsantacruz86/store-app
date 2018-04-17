@@ -55,4 +55,8 @@ products.product_sales AS Sales
 FROM products
 INNER JOIN departments ON products.department_id = departments.department_id;
 
+-- Query to display inventory at the begining
 SELECT item_id, product_name, price FROM products;
+
+-- Query to Update invetoy when a user completes a purchase.
+UPDATE products SET `stock_quantity` = `stock_quantity` - 1 WHERE item_id = 1;
