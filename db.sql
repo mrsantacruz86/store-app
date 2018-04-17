@@ -1,9 +1,9 @@
--- Create database
+## Creating datatabase
 DROP DATABASE IF EXISTS bamazon;
 CREATE DATABASE bamazon;
 USE bamazon;
 
--- Create products table
+## Creating the products table
 DROP TABLE IF EXISTS products;
 CREATE TABLE products (
     item_id INT KEY NOT NULL AUTO_INCREMENT,
@@ -15,7 +15,7 @@ CREATE TABLE products (
 );
 
 -- Populte products table
-INSERT INTO `bamazon`.`products` (`product_name`, `department_id`, `price`, `stock_quantity`) 
+INSERT INTO bamazon.products (product_name, department_id, price, stock_quantity) 
 VALUES 
 	('Headphones', 1, 20, 10),
 	('Copy paper', 2, 5, 40),
@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS departments;
 CREATE TABLE departments (
     department_id INT KEY NOT NULL AUTO_INCREMENT,
     department_name VARCHAR(50) NOT NULL,
-    overhead_costs DECIMAL(10 , 2 )
+    overhead_costs DECIMAL(10 , 2 ) NOT NULL DEFAULT 0
 );
 
 -- Populate departments table
