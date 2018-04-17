@@ -1,34 +1,52 @@
-drop database if exists bamazon;
-create database bamazon;
-use bamazon;
+-- Create database
+DROP DATABASE IF EXISTS bamazon;
+CREATE DATABASE bamazon;
+USE bamazon;
 
-drop table if exists products;
-create table products(
-	item_id int key not null auto_increment,
-	product_name varchar(50) not null,
-	department_name varchar(50),
-	price decimal(10,2) not null,
-	stock_quantity int(10) not null,
-	product_sales decimal(10,2) default 0,
+-- Create products table
+DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+    item_id INT KEY NOT NULL AUTO_INCREMENT,
+    product_name VARCHAR(50) NOT NULL,
+    department_id INT(10) NOT NULL,
+    price DECIMAL(10 , 2 ) NOT NULL,
+    stock_quantity INT(10) NOT NULL,
+    product_sales DECIMAL(10 , 2 ) DEFAULT 0
 );
 
-INSERT INTO `bamazon`.`products` (`product_name`, `department_name`, `price`, `stock_quantity`) 
+-- Populte products table
+INSERT INTO `bamazon`.`products` (`product_name`, `department_id`, `price`, `stock_quantity`) 
 VALUES 
-	('Headphones', 'Electronics', '20', '10'),
-	('Copy paper', 'Office Supplies', '5', '40'),
-	('Picture frame', 'Decorations', '15', '50'),
-	('Dictionary', 'Books', '20', '30'),
-	('Stapler', 'Office Suplies', '8', '20'),
-	('Mouse', 'Electronics', '15', '4'),
-	('Ruler', 'Office Suplies', '3', '50'),
-	('CookBook', 'Books', '12', '5'),
-	('Pillow', 'Bedroom', '10', '20'),
-	('Pens', 'Office Supplies', '5', '25');
+	('Headphones', 1, 20, 10),
+	('Copy paper', 2, 5, 40),
+	('Picture frame', 3, 15, 50),
+	('Dictionary', 4, 20, 50),
+	('Stapler', 2, 8, 20),
+	('Mouse', 1, 15, 8),
+	('Ruler', 2, 3, 50),
+	('CookBook', 4, 12, 5),
+	('Pillow', 5, 10, 20),
+	('Pens', 2, 5, 25);
 
-
-drop table if exists departments
-create table departments(
-	department_id int key not null auto_increment,
-	department_name varchar(50) not null,
-	overhead_costs decimal(10,2) not null,
+-- Create department table
+DROP TABLE IF EXISTS departments;
+CREATE TABLE departments (
+    department_id INT KEY NOT NULL AUTO_INCREMENT,
+    department_name VARCHAR(50) NOT NULL,
+    overhead_costs DECIMAL(10 , 2 )
 );
+
+-- Populate departments table
+INSERT INTO bamazon.departments(department_name)
+VALUES
+	('Electronics'),
+	('Office Supplies'),
+	('Decorations'),
+	('Books'),
+	('Bedroom');
+
+-- Display table joined by department_id
+SELECT products.item_id, products.product_name, departments.department_name, 
+products.price, products.stock_quantity, products.product_sales
+FROM products
+INNER JOIN departments ON products.department_id = departments.department_id;
