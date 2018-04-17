@@ -1,29 +1,26 @@
 {
   "name": "storeappcli",
   "version": "1.0.0",
-  "description": "App to manage auctions and have persistency",
-  "main": "greatbay.js",
+  "description": "",
+  "main": "bamazonCustomer.js",
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrsantacruz86/greatbay.git"
+    "url": "git+https://github.com/mrsantacruz86/store-app.git"
   },
-  "keywords": [
-    "auction",
-    "inquirer",
-    "mysql"
-  ],
   "author": "Nelson Diaz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mrsantacruz86/greatbay/issues"
+    "url": "https://github.com/mrsantacruz86/store-app/issues"
   },
-  "homepage": "https://github.com/mrsantacruz86/greatbay#readme",
+  "homepage": "https://github.com/mrsantacruz86/store-app#readme",
   "dependencies": {
     "dotenv": "^5.0.1",
     "inquirer": "^5.2.0",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "table": "^4.0.3"
   }
 }

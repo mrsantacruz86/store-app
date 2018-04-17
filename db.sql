@@ -46,7 +46,13 @@ VALUES
 	('Bedroom');
 
 -- Display table joined by department_id
-SELECT products.item_id, products.product_name, departments.department_name, 
-products.price, products.stock_quantity, products.product_sales
+SELECT products.item_id AS ID, 
+products.product_name AS Item,
+departments.department_name AS Department, 
+products.price AS Price, 
+products.stock_quantity AS Quantity, 
+products.product_sales AS Sales
 FROM products
 INNER JOIN departments ON products.department_id = departments.department_id;
+
+SELECT item_id, product_name, price FROM products;
